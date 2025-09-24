@@ -7,7 +7,8 @@
 - **Add-on Packages:**  
   - `pandas` - data loading and manipulation
   - `matplotlib` – plotting confusion matrices  
-  - `seaborn` – visualizing confusion matrices   
+  - `seaborn` – visualizing confusion matrices
+  - `lightgbm` (`lgb`) – gradient boosting framework for classification/regression  
   - `scikit-learn` (`sklearn`) library - machine learning models and metrics  
     - Subpackages, Classes, and Functions used:
         - `model_selection` → (`train_test_split`)
@@ -26,8 +27,13 @@
   - `torch` – deep learning framework  
     - Subpackages and Classs used:
         - `torch.utils.data` → `dataset`
-  - `lightgbm` (`lgb`) – gradient boosting framework for classification/regression  
-  
 
 - **Platform Used:**  
   - Mac was used to write and run scripts. The scripts can be run across platforms.
+
+
+## 2. Documentation Map
+
+## 3. Reproducing Our Results
+ 
+ 
