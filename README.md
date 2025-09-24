@@ -5,17 +5,29 @@
 - **Software Used**: Python 3
  
 - **Add-on Packages:**  
-  - `pandas`: used for data loading and manipulation   
-  - `scikit-learn` (`sklearn`) library: used for machine learning models and metrics  
-    - Subpackages used:
-        - `model_selection` — for `train_test_split`
-        - `feature_extraction.text` - for `TfidfVectorizer`
-        - `metrics` - for `accuracy_score`, `classification_report`, `confusion_matrix`
-        - `linear_model`- for `LogisticRegression`
-        - `svm` - for `LinearSVC`
-        - `naive_bayes` for `MultinomialNB`
-  - `matplotlib` – plotting the confusion matrix  
-  - `seaborn` – enhanced visualization of the confusion matrix  
+  - `pandas` - data loading and manipulation
+  - `matplotlib` – plotting confusion matrices  
+  - `seaborn` – visualizing confusion matrices   
+  - `scikit-learn` (`sklearn`) library - machine learning models and metrics  
+    - Subpackages, Classes, and Functions used:
+        - `model_selection` → (`train_test_split`)
+        - `feature_extraction.text` → (`TfidfVectorizer`)
+        - `metrics` → (`accuracy_score`, `classification_report`, `confusion_matrix`)
+        - `linear_model` → (`LogisticRegression`)
+        - `svm` → (`LinearSVC`)
+        - `naive_bayes` → (`MultinomialNB`)
+  - `transformers` – deep learning models for NLP  
+    - Classes used:
+        - `BertTokenizer`
+        - `BertForSequenceClassification`
+        - `Trainer`
+        - `TrainingArguments`
+        - `DataCollatorWithPadding`  
+  - `torch` – deep learning framework  
+    - Subpackages and Classs used:
+        - `torch.utils.data` → `dataset`
+  - `lightgbm` (`lgb`) – gradient boosting framework for classification/regression  
+  
 
 - **Platform Used:**  
-  - The scripts were run on Mac, but the code can be run across platforms.
+  - Mac was used to write and run scripts. The scripts can be run across platforms.
