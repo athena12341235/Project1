@@ -1,10 +1,9 @@
 # Movie Review Sentiment Analysis: Evaluating Models
 
+
 ## 1. Software and Platform
-- **Software Used**  
-  - Python 3
+- **Software Used**: Python 3
  
-    
 - **Add-on Packages Needed**  
   - `pandas`: used for data loading and manipulation   
   - `scikit-learn` (`sklearn`) library: used for machine learning models and metrics  
