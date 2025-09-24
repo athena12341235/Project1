@@ -2,8 +2,7 @@
 
 
 ## 1. Software and Platform
-- **Platform Used:**  
-  - Mac was used to write and run scripts. The scripts can be run across platforms.
+- **Platform Used:** Mac was used to write and run scripts. The scripts can be run across platforms.
 - **Software Used**: Python 3
  
 - **Add-on Packages:**  
