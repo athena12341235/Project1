@@ -1,9 +1,12 @@
-# ---------------------------------------------------------
-# Logistic Regression Sentiment Classifier
-# ---------------------------------------------------------
+"""
+This script trains and evaluates a Logistic Regression model
+for sentiment classification on the Movie Review Polarity dataset.
+It expects a CSV file named 'review_polarity_clean.csv' with two columns:
+    - clean_data: preprocessed movie review text
+    - label: binary sentiment label (1 = positive, 0 = negative)
+"""
 
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.model_selection import train_test_split
@@ -15,74 +18,45 @@ from sklearn.metrics import (
     confusion_matrix,
     precision_recall_fscore_support
 )
-import platform  # system info
 
-# -----------------------
-# Load and prepare data
-# -----------------------
+
+# 1. Load dataset
 reviews_df = pd.read_csv("review_polarity_clean.csv")
-reviews_df = reviews_df[["clean_text", "label"]].dropna()
-reviews_df["clean_text"] = reviews_df["clean_text"].astype(str)
-reviews_df["label"] = reviews_df["label"].astype(int)
-
-X = reviews_df["clean_text"]
+X = reviews_df["clean_text"].astype(str)
 y = reviews_df["label"]
 
+# 2. Train-test split (80/20)
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.20, random_state=42, stratify=y
+    X, y, test_size=0.2, random_state=42, stratify=y
 )
 
-# -----------------------
-# TF–IDF
-# -----------------------
+
+# 3. TF–IDF vectorization
 vectorizer = TfidfVectorizer(
-    ngram_range=(1, 2),
-    stop_words="english"
+    ngram_range=(1, 2),   # unigrams + bigrams
+    min_df=2,             # ignore very rare words
+    max_df=0.9,           # ignore overly common words
+    sublinear_tf=True,    # dampen term frequency
+    norm="l2"
 )
 X_train_tfidf = vectorizer.fit_transform(X_train)
 X_test_tfidf  = vectorizer.transform(X_test)
-feature_names = np.array(vectorizer.get_feature_names_out())
 
-# -----------------------
-# Train/evaluate Logistic Regression
-# -----------------------
+# 4. Train SVM
 model = LogisticRegression(max_iter=1000, solver="saga", n_jobs=-1, random_state=42)
 model.fit(X_train_tfidf, y_train)
+
+# 5. Evaluate
 y_pred = model.predict(X_test_tfidf)
-
-acc = accuracy_score(y_test, y_pred)
-prec_bin, rec_bin, f1_bin, _ = precision_recall_fscore_support(
-    y_test, y_pred, average="binary", zero_division=0
-)
-
-report = classification_report(y_test, y_pred, digits=4)
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print("\nClassification Report:\n", classification_report(y_test, y_pred, target_names=["Negative","Positive"]))
 cm = confusion_matrix(y_test, y_pred, labels=[0, 1])
 
-# -----------------------
-# Plot confusion matrix
-# -----------------------
-plt.figure(figsize=(6,5))
-sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", cbar=False,
-            xticklabels=["Pred 0 (Neg)", "Pred 1 (Pos)"],
-            yticklabels=["True 0 (Neg)", "True 1 (Pos)"])
-plt.title("Confusion Matrix - Logistic Regression", fontsize=14)
-plt.ylabel("Actual Label")
-plt.xlabel("Predicted Label")
-plt.tight_layout()
-plt.show()
 
-# -----------------------
-# Logging (optional)
-# -----------------------
-logfile = "results.txt"
-with open(logfile, "w", encoding="utf-8") as f:
-    f.write("=" * 80 + "\n")
-    f.write("SENTIMENT CLASSIFICATION RESULTS (Logistic Regression Only)\n")
-    f.write("=" * 80 + "\n")
-    f.write(f"Accuracy: {acc:.4f}\n\n")
-    f.write("Classification Report:\n")
-    f.write(report + "\n")
-    f.write("Confusion Matrix:\n")
-    f.write(pd.DataFrame(cm,
-                         index=["True 0 (Neg)", "True 1 (Pos)"],
-                         columns=["Pred 0 (Neg)", "Pred 1 (Pos)"]).to_string())
+# 6. Plot confusion matrix
+plt.figure(figsize=(6,4))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=["Negative","Positive"], yticklabels=["Negative","Positive"])
+plt.xlabel("Predicted Label")
+plt.ylabel("True Label")
+plt.title("Confusion Matrix for SVM Classifier")
+plt.show()
