@@ -4,17 +4,18 @@
 ## 1. Software and Platform
 - **Software Used**: Python 3
  
-- **Add-on Packages Needed**  
+- **Add-on Packages:**  
   - `pandas`: used for data loading and manipulation   
   - `scikit-learn` (`sklearn`) library: used for machine learning models and metrics  
     - Subpackages used:
-        - `model_selection` - for `train_test_split`
+        - `model_selection` — for `train_test_split`
         - `feature_extraction.text` - for `TfidfVectorizer`
+        - `metrics` - for `accuracy_score`, `classification_report`, `confusion_matrix`
         - `linear_model`- for `LogisticRegression`
         - `svm` - for `LinearSVC`
-        - `metrics` - for `accuracy_score`, `classification_report`, `confusion_matrix`
+        - `naive_bayes` for `MultinomialNB`
   - `matplotlib` – plotting the confusion matrix  
   - `seaborn` – enhanced visualization of the confusion matrix  
 
-- **Platform Used**  
+- **Platform Used:**  
   - The scripts were run on Mac, but the code can be run across platforms.
