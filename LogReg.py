@@ -1,5 +1,11 @@
+# ---------------------------------------------------------
+# Logistic Regression Sentiment Classifier
+# ---------------------------------------------------------
+
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -47,48 +53,35 @@ acc = accuracy_score(y_test, y_pred)
 prec_bin, rec_bin, f1_bin, _ = precision_recall_fscore_support(
     y_test, y_pred, average="binary", zero_division=0
 )
-_, _, f1_macro, _ = precision_recall_fscore_support(
-    y_test, y_pred, average="macro", zero_division=0
-)
 
 report = classification_report(y_test, y_pred, digits=4)
 cm = confusion_matrix(y_test, y_pred, labels=[0, 1])
-cm_df = pd.DataFrame(cm, index=["True 0 (Neg)", "True 1 (Pos)"], columns=["Pred 0 (Neg)", "Pred 1 (Pos)"])
-
-pos_feats, neg_feats = top_features_linear(model.coef_, feature_names, top_n=5)
 
 # -----------------------
-# Logging
+# Plot confusion matrix
+# -----------------------
+plt.figure(figsize=(6,5))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", cbar=False,
+            xticklabels=["Pred 0 (Neg)", "Pred 1 (Pos)"],
+            yticklabels=["True 0 (Neg)", "True 1 (Pos)"])
+plt.title("Confusion Matrix - Logistic Regression", fontsize=14)
+plt.ylabel("Actual Label")
+plt.xlabel("Predicted Label")
+plt.tight_layout()
+plt.show()
+
+# -----------------------
+# Logging (optional)
 # -----------------------
 logfile = "results.txt"
 with open(logfile, "w", encoding="utf-8") as f:
-    # Dataset summary
-    total = len(reviews_df)
-    train_n, test_n = len(X_train), len(X_test)
-    label_counts = reviews_df["label"].value_counts().to_dict()
-    pct_pos = 100 * label_counts.get(1, 0) / total if total else 0
-    pct_neg = 100 * label_counts.get(0, 0) / total if total else 0
-    f.write("-" * 80 + "\n")
-    f.write("DATASET SUMMARY\n")
-    f.write("-" * 80 + "\n")
-    f.write(f"Total samples: {total}\n")
-    f.write(f"Train size: {train_n} | Test size: {test_n}\n")
-    f.write(f"Label distribution: {label_counts} (Pos={pct_pos:.1f}%, Neg={pct_neg:.1f}%)\n\n")
-
-    # Results
     f.write("=" * 80 + "\n")
-    f.write("LOGISTIC REGRESSION RESULTS\n")
+    f.write("Logistic Regression Results:\n")
     f.write("=" * 80 + "\n")
     f.write(f"Accuracy: {acc:.4f}\n\n")
     f.write("Classification Report:\n")
     f.write(report + "\n")
     f.write("Confusion Matrix:\n")
-    f.write(cm_df.to_string() + "\n")
-    f.write("\nTop features (class 1 = Positive):\n")
-    f.write(format_top_feats(pos_feats) + "\n")
-    f.write("\nTop features (class 0 = Negative):\n")
-    f.write(format_top_feats(neg_feats) + "\n")
-
-print("\nResults saved to", logfile)
-print("\nConfusion Matrix:\n")
-print(cm_df)
+    f.write(pd.DataFrame(cm,
+                         index=["True 0 (Neg)", "True 1 (Pos)"],
+                         columns=["Pred 0 (Neg)", "Pred 1 (Pos)"]).to_string())
