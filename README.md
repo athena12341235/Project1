@@ -2,6 +2,8 @@
 
 
 ## 1. Software and Platform
+- **Platform Used:**  
+  - Mac was used to write and run scripts. The scripts can be run across platforms.
 - **Software Used**: Python 3
  
 - **Add-on Packages:**  
@@ -27,10 +29,6 @@
   - `torch` – deep learning framework  
     - Subpackages and Classs used:
         - `torch.utils.data` → `dataset`
-
-- **Platform Used:**  
-  - Mac was used to write and run scripts. The scripts can be run across platforms.
-
 
 ## 2. Documentation Map
 
