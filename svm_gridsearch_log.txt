@@ -1,0 +1,66 @@
+=== GridSearchCV Results (Top 10 by Macro-F1) ===
+
+Params: {'svm__C': 1, 'tfidf__max_features': 20000, 'tfidf__ngram_range': (1, 1)}
+  Accuracy: 0.8306 ± 0.0228
+  F1-macro: 0.8306 ± 0.0228
+  F1-weighted: 0.8306 ± 0.0228
+
+Params: {'svm__C': 1, 'tfidf__max_features': 10000, 'tfidf__ngram_range': (1, 1)}
+  Accuracy: 0.8306 ± 0.0287
+  F1-macro: 0.8306 ± 0.0287
+  F1-weighted: 0.8306 ± 0.0287
+
+Params: {'svm__C': 1, 'tfidf__max_features': 10000, 'tfidf__ngram_range': (1, 2)}
+  Accuracy: 0.8300 ± 0.0132
+  F1-macro: 0.8299 ± 0.0133
+  F1-weighted: 0.8299 ± 0.0133
+
+Params: {'svm__C': 1, 'tfidf__max_features': 20000, 'tfidf__ngram_range': (1, 2)}
+  Accuracy: 0.8269 ± 0.0190
+  F1-macro: 0.8268 ± 0.0191
+  F1-weighted: 0.8268 ± 0.0191
+
+Params: {'svm__C': 1, 'tfidf__max_features': 5000, 'tfidf__ngram_range': (1, 2)}
+  Accuracy: 0.8250 ± 0.0127
+  F1-macro: 0.8248 ± 0.0126
+  F1-weighted: 0.8248 ± 0.0126
+
+Params: {'svm__C': 1, 'tfidf__max_features': 5000, 'tfidf__ngram_range': (1, 1)}
+  Accuracy: 0.8250 ± 0.0243
+  F1-macro: 0.8248 ± 0.0244
+  F1-weighted: 0.8248 ± 0.0243
+
+Params: {'svm__C': 10, 'tfidf__max_features': 20000, 'tfidf__ngram_range': (1, 1)}
+  Accuracy: 0.8212 ± 0.0218
+  F1-macro: 0.8212 ± 0.0217
+  F1-weighted: 0.8212 ± 0.0218
+
+Params: {'svm__C': 10, 'tfidf__max_features': 20000, 'tfidf__ngram_range': (1, 2)}
+  Accuracy: 0.8206 ± 0.0192
+  F1-macro: 0.8205 ± 0.0192
+  F1-weighted: 0.8205 ± 0.0192
+
+Params: {'svm__C': 0.1, 'tfidf__max_features': 5000, 'tfidf__ngram_range': (1, 2)}
+  Accuracy: 0.8194 ± 0.0152
+  F1-macro: 0.8192 ± 0.0153
+  F1-weighted: 0.8192 ± 0.0153
+
+Params: {'svm__C': 10, 'tfidf__max_features': 10000, 'tfidf__ngram_range': (1, 1)}
+  Accuracy: 0.8181 ± 0.0246
+  F1-macro: 0.8180 ± 0.0245
+  F1-weighted: 0.8180 ± 0.0245
+
+
+=== Best Parameters ===
+{'svm__C': 1, 'tfidf__max_features': 20000, 'tfidf__ngram_range': (1, 1)}
+
+=== Final Test Performance ===
+Accuracy: 0.8600
+              precision    recall  f1-score   support
+
+           0     0.9006    0.8109    0.8534       201
+           1     0.8265    0.9095    0.8660       199
+
+    accuracy                         0.8600       400
+   macro avg     0.8635    0.8602    0.8597       400
+weighted avg     0.8637    0.8600    0.8597       400
