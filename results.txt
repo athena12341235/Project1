@@ -1,0 +1,117 @@
+--------------------------------------------------------------------------------
+DATASET SUMMARY
+--------------------------------------------------------------------------------
+Total samples: 2000
+Train size: 1600 | Test size: 400
+Label distribution: {1: 1000, 0: 1000} (Pos=50.0%, Neg=50.0%)
+
+================================================================================
+OVERALL MODEL COMPARISON
+================================================================================
+                      Model  Accuracy  Precision_Pos(1)  Recall_Pos(1)  F1_Pos(1)  F1_Macro
+     Linear SVM (LinearSVC)    0.8275            0.8075         0.8600     0.8329    0.8273
+        Logistic Regression    0.8225            0.8000         0.8600     0.8289    0.8223
+Naive Bayes (MultinomialNB)    0.8100            0.7768         0.8700     0.8208    0.8093
+
+--------------------------------------------------------------------------------
+Logistic Regression
+--------------------------------------------------------------------------------
+Accuracy: 0.8225
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.8486    0.7850    0.8156       200
+           1     0.8000    0.8600    0.8289       200
+
+    accuracy                         0.8225       400
+   macro avg     0.8243    0.8225    0.8223       400
+weighted avg     0.8243    0.8225    0.8223       400
+
+Confusion Matrix:
+              Pred 0 (Neg)  Pred 1 (Pos)
+True 0 (Neg)           157            43
+True 1 (Pos)            28           172
+
+Top features (class 1 = Positive):
+life                            1.3370
+war                             1.2136
+great                           1.0303
+jackie                          0.9181
+family                          0.8770
+
+Top features (class 0 = Negative):
+bad                            -2.0713
+worst                          -1.2093
+plot                           -1.1657
+movie                          -1.0111
+stupid                         -0.9436
+
+--------------------------------------------------------------------------------
+Naive Bayes (MultinomialNB)
+--------------------------------------------------------------------------------
+Accuracy: 0.8100
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.8523    0.7500    0.7979       200
+           1     0.7768    0.8700    0.8208       200
+
+    accuracy                         0.8100       400
+   macro avg     0.8145    0.8100    0.8093       400
+weighted avg     0.8145    0.8100    0.8093       400
+
+Confusion Matrix:
+              Pred 0 (Neg)  Pred 1 (Pos)
+True 0 (Neg)           150            50
+True 1 (Pos)            26           174
+
+Top features (class 1 = Positive):
+shrek                           1.0790
+truman                          1.0489
+war                             0.9578
+mulan                           0.9112
+jackie                          0.8898
+
+Top features (class 0 = Negative):
+worst                          -1.1508
+godzilla                       -1.0555
+stupid                         -1.0193
+seagal                         -0.9922
+bad                            -0.9212
+
+--------------------------------------------------------------------------------
+Linear SVM (LinearSVC)
+--------------------------------------------------------------------------------
+Accuracy: 0.8275
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.8503    0.7950    0.8217       200
+           1     0.8075    0.8600    0.8329       200
+
+    accuracy                         0.8275       400
+   macro avg     0.8289    0.8275    0.8273       400
+weighted avg     0.8289    0.8275    0.8273       400
+
+Confusion Matrix:
+              Pred 0 (Neg)  Pred 1 (Pos)
+True 0 (Neg)           159            41
+True 1 (Pos)            28           172
+
+Top features (class 1 = Positive):
+life                            1.3631
+great                           1.3335
+war                             1.1727
+performance                     1.0808
+family                          0.9204
+
+Top features (class 0 = Negative):
+bad                            -2.3168
+worst                          -1.4878
+plot                           -1.4648
+stupid                         -1.1136
+supposed                       -1.0871
+
