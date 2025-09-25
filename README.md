@@ -2,7 +2,7 @@
 
 
 ## 1. Software and Platform
-- **Platform Used:** Mac was used to write and run scripts. The scripts can be run across platforms.
+- ***Platform Used:*** Mac was used to write and run scripts. The scripts can be run across platforms.
 - **Software Used**: Python 3
  
 - **Add-on Packages:**  
@@ -30,8 +30,46 @@
     - Subpackages and Classs used:
         - `torch.utils.data` → `dataset`
 
+
 ## 2. Documentation Map
+The hierarchy of folders and files contained in this project are as follows:
+
+Project1
+├── DATA
+│   ├── rt-polaritydata/rt-polaritydata
+│   │   ├── rt-polarity.neg
+│   │   └── rt-polarity.pos
+│   ├── preprocessing.py
+│   └── review_polarity_clean.csv
+├── OUTPUT
+│   ├── bert_output.log
+│   ├── lightgbm_cm.png
+│   ├── mlp_cm.pgn
+│   ├── naive_bayes_output.log
+│   ├── sgd_cm.png
+│   └── svm_cm.png
+├── SCRIPTS
+│   ├── bert_model.py
+│   ├── lightgbm_model.py
+│   ├── logreg_model.py
+│   ├── mlp_model.py
+│   ├── naive_bayes_model.py
+│   ├── sgd_model.py
+│   └── svm_model.py
+├── README.md
+└── LICENSE.md
+
 
 ## 3. Reproducing Our Results
- 
- 
+  1. **Set up Python and install required add-on packages**
+     - Ensure you have Python 3 installed on your system.
+     - See section 1 for packages needed.
+  2. **Obtain the data**
+     - Navigate to the `DATA/rt-polaritydata/rt-polaritydata` folder.
+     - Download the file `review_polarity_clean.csv` (preprocessed reviews dataset).  
+     - If you want to preprocess the raw data yourself, use the provided `rt-polarity.neg` and `rt-polarity.pos` files with `preprocessing.py` from the `SCRIPTS` folder.
+  3. **Run model scripts**
+     - Navigate to the `SCRIPTS` folder. Download the .py files.
+     - Each script corresponds to a model (ex: Logistic Regression, SVM, Naive Bayes). Run each script in order of prefix numbers; the models are indepenent, so order does not matter, but we have numbered the files to mirror our process. 
+  4. **Download and view outputs** 
+     - Confusion matrix images (ex: `svm_cm.png`, `mlp_cm.png`) need to be saved manually after running the scripts.
