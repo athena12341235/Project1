@@ -34,6 +34,7 @@
 ## 2. Documentation Map
 The hierarchy of folders and files contained in this project are as follows:
 
+```text
 Project1
 ├── DATA
 │   ├── rt-polaritydata/rt-polaritydata
@@ -58,7 +59,7 @@ Project1
 │   └── svm_model.py
 ├── README.md
 └── LICENSE.md
-
+```
 
 ## 3. Reproducing Our Results
   1. **Set up Python and install required add-on packages**
