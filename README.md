@@ -35,9 +35,13 @@
 The hierarchy of folders and files contained in this project are as follows:
 
 Project1
+
 ├── DATA
+
 │   ├── rt-polaritydata/rt-polaritydata
+
 │   │   ├── rt-polarity.neg
+
 │   │   └── rt-polarity.pos
 │   ├── preprocessing.py
 │   └── review_polarity_clean.csv
