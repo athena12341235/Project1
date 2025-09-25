@@ -15,9 +15,10 @@
         - `model_selection` → (`train_test_split`)
         - `feature_extraction.text` → (`TfidfVectorizer`)
         - `metrics` → (`accuracy_score`, `classification_report`, `confusion_matrix`)
-        - `linear_model` → (`LogisticRegression`)
+        - `linear_model` → (`LogisticRegression`, `SGDClassifier`)
         - `svm` → (`LinearSVC`)
         - `naive_bayes` → (`MultinomialNB`)
+        - `decomposition` → 
   - `transformers` – deep learning models for NLP  
     - Classes used:
         - `BertTokenizer`
