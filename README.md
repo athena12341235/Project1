@@ -60,7 +60,7 @@ Project1
 │   ├── 2_logreg_model.py
 │   ├── 3_svm_model.py
 │   ├── 4_sgd_model.py
-│   ├── 5_lightgbm_model.oy
+│   ├── 5_lightgbm_model.py
 │   ├── 6_mlp_model.py
 │   ├── 7_bert_model.py
 │   └── preprocessing.py
