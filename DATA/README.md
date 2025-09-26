@@ -5,7 +5,7 @@ The data used in this project is the **Movie Review Polarity Dataset v2.0**, whi
 Cornell University Computer Science department’s distribution hub for sentiment analysis research [1]. When downloaded, 
 the dataset appears as a folder named `review_polarity`, containing a subdirectory `txt_sentoken`, which is further divided 
 into two subfolders: `pos` (1,000 positive reviews) and `neg` (1,000 negative reviews). Each review is stored as an 
-individual plain-text file. For the purposes of our project, we ran a preprocessing script (`preprocessing.py` in the `SCRIPTS` folder of the repository) that consolidated and cleaned the data. We merged the 2,000 text files into a single structured CSV file, `review_polarity_clean.csv`, and applied text preprocessing steps including lowercasing, removal of punctuation and numbers, 
+individual plain-text file. For the purposes of our project, we ran a preprocessing script (`preprocessing.py` in the `SCRIPTS` folder of this repository) that consolidated and cleaned the data. We merged the 2,000 text files into a single structured CSV file, `review_polarity_clean.csv`, and applied text preprocessing steps including lowercasing, removal of punctuation and numbers, 
 removal of stopwords, tokenization, and lemmatization. The resulting dataset contains 2,000 rows and 2 features: 
 `clean_text` (the cleaned text of the review) and `label` (a binary indicator, with 1 for positive and 0 for negative).
 
@@ -42,7 +42,7 @@ research purposes without explicit permission.
 - `clean_text` → String containing cleaned text of a single movie review
 - `label` → Binary integer indicating polarity classification (1 = positive, 0 = negative)
 
-## Explanatory Plots (at least 2)
+## Explanatory Plots
 ![review_lengths_plots.png](review_lengths_plots.png)
 
 **Figure 1**. Distribution of review lengths for positive (left) and negative (right) movie reviews, measured by number of words.
