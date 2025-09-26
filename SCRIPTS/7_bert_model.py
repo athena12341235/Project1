@@ -37,8 +37,8 @@ from transformers import BertTokenizer, BertForSequenceClassification, Trainer, 
 from torch.utils.data import Dataset
 import torch
 
-# 1. Load dataset from CSV
-df = pd.read_csv("review_polarity_clean.csv")
+# 1. Load dataset from CSV (from DATA folder)
+df = pd.read_csv(os.path.join("..", "DATA", "review_polarity_clean.csv"))
 X = df["clean_text"]   # input text reviews
 y = df["label"]        # binary sentiment labels
 
