@@ -77,6 +77,6 @@ Project1
      - Otherwise, there is an existing `review_polarity_clean.csv` file in the `DATA` folder ready for use.
   4. **Run model scripts**
      - Navigate to the `SCRIPTS` folder.
-     - Each script corresponds to a model (ex: Logistic Regression, SVM, Naive Bayes). Run each script in order of their postfix numbers. Note: The models are indepenent, so order does not matter, but we have numbered the files to mirror our process. 
+     - Each script corresponds to a model (ex: Logistic Regression, SVM, Naive Bayes). Run each script in order of their prefix numbers. Note: The models are indepenent, so order does not matter, but we have numbered the files to mirror our process. 
   5. **Download and view outputs** 
      - Confusion matrix images (ex: `svm_cm.png`, `mlp_cm.png`) need to be saved manually after running the scripts.
