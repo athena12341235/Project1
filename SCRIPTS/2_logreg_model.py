@@ -43,9 +43,9 @@ from sklearn.metrics import (
     precision_recall_fscore_support
 )
 
-# 1. Load dataset from CSV
+# 1. Load dataset from CSV (in DATA folder)
 # Assumes file is in the same directory
-reviews_df = pd.read_csv("review_polarity_clean.csv")
+reviews_df = pd.read_csv(os.path.join("..", "DATA", "review_polarity_clean.csv"))
 
 # Extract features (text reviews) and labels (0 or 1 sentiment)
 X = reviews_df["clean_text"].astype(str)   # predictor variable
