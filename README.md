@@ -73,7 +73,7 @@ Project1
      - Ensure you have Python 3 installed on your system.
      - See section 1 for packages needed.
   2. **Prepare the data**
-     - If you wish to preprocess the raw data yourself, navigate to the `SCRIPTS` folder and run the `preprocessing.py` file, which will save the preprocessed data to a new `review_polarity_clean.csv` file to the `DATA` folder.
+     - If you wish to preprocess the raw data yourself, navigate to the `SCRIPTS` folder and run the `preprocessing.py` file, which will save the preprocessed data in a new `review_polarity_clean.csv` file within the `DATA` folder.
      - Otherwise, there is an existing `review_polarity_clean.csv` file in the `DATA` folder ready for use.
   4. **Run model scripts**
      - Navigate to the `SCRIPTS` folder.
