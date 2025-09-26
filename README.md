@@ -72,11 +72,11 @@ Project1
      - Ensure you have Python 3 installed on your system.
      - See section 1 for packages needed.
   2. **Obtain the data**
-     - Navigate to the `DATA/rt-polaritydata/rt-polaritydata` folder.
-     - Download the file `review_polarity_clean.csv` (preprocessed reviews dataset).  
-     - If you want to preprocess the raw data yourself, use the provided `rt-polarity.neg` and `rt-polarity.pos` files with `preprocessing.py` from the `SCRIPTS` folder.
+     - Navigate to the `DATA` folder.
+     - Download the file `review_polarity_clean.csv` (preprocessed reviews dataset).
+     - If you want to preprocess the raw data yourself, run `preprocessing.py` from the `SCRIPTS` folder, which reads in the .txt files under `review_polarity/txt_sentoken/neg` and `review_polarity/txt_sentoken/pos` from the `DATA` folder.
   3. **Run model scripts**
      - Navigate to the `SCRIPTS` folder. Download the .py files.
-     - Each script corresponds to a model (ex: Logistic Regression, SVM, Naive Bayes). Run each script in order of prefix numbers; the models are indepenent, so order does not matter, but we have numbered the files to mirror our process. 
+     - Each script corresponds to a model (ex: Logistic Regression, SVM, Naive Bayes). Run each script in order of postfix numbers. The models are indepenent, so order does not matter, but we have numbered the files to mirror our process. 
   4. **Download and view outputs** 
      - Confusion matrix images (ex: `svm_cm.png`, `mlp_cm.png`) need to be saved manually after running the scripts.
