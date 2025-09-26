@@ -30,8 +30,8 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# 1. Load dataset from CSV file
-df = pd.read_csv("review_polarity_clean.csv")
+# 1. Load dataset from CSV file (from DATA folder)
+df = pd.read_csv(os.path.join("..", "DATA", "review_polarity_clean.csv"))
 
 # Separate input features (text) and target labels (0 or 1)
 X = df["clean_text"].astype(str)   # review text (predictors)
