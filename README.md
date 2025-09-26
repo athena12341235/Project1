@@ -18,7 +18,8 @@
         - `linear_model` → (`LogisticRegression`, `SGDClassifier`)
         - `svm` → (`LinearSVC`)
         - `naive_bayes` → (`MultinomialNB`)
-        - `decomposition` → 
+        - `decomposition` → (`TruncatedSVD`)
+        - `neural_network` → (`MLPClassifier`)
   - `transformers` – deep learning models for NLP  
     - Classes used:
         - `BertTokenizer`
@@ -55,14 +56,14 @@ Project1
 │   ├── sgd_cm.png
 │   └── svm_cm.png
 ├── SCRIPTS
-│   ├── bert_model.py
-│   ├── lightgbm_model.py
-│   ├── logreg_model.py
-│   ├── mlp_model.py
-│   ├── naive_bayes_model.py
-│   ├── preprocessing.py
-│   ├── sgd_model.py
-│   └── svm_model.py
+│   ├── 1_naive_bayes_model.py
+│   ├── 2_logreg_model.py
+│   ├── 3_svm_model.py
+│   ├── 4_sgd_model.py
+│   ├── 5_lightgbm_model.oy
+│   ├── 6_mlp_model.py
+│   ├── 7_bert_model.py
+│   └── preprocessing.py
 ├── LICENSE.md
 └── README.md
 ```
