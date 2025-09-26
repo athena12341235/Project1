@@ -69,14 +69,14 @@ Project1
 
 ## 3. Reproducing Our Results
   1. **Set up Python and install required add-on packages**
+     - Clone this repository: https://github.com/athena12341235/Project1
      - Ensure you have Python 3 installed on your system.
      - See section 1 for packages needed.
-  2. **Obtain the data**
-     - Navigate to the `DATA` folder.
-     - Download the file `review_polarity_clean.csv` (preprocessed reviews dataset).
-     - If you want to preprocess the raw data yourself, run `preprocessing.py` from the `SCRIPTS` folder, which reads in the .txt files under `review_polarity/txt_sentoken/neg` and `review_polarity/txt_sentoken/pos` from the `DATA` folder.
-  3. **Run model scripts**
-     - Navigate to the `SCRIPTS` folder. Download the .py files.
-     - Each script corresponds to a model (ex: Logistic Regression, SVM, Naive Bayes). Run each script in order of postfix numbers. The models are indepenent, so order does not matter, but we have numbered the files to mirror our process. 
-  4. **Download and view outputs** 
+  2. **Prepare the data**
+     - If you wish to preprocess the raw data yourself, navigate to the `SCRIPTS` folder and run the `preprocessing.py` file, which will save the preprocessed data to a new `review_polarity_clean.csv` file to the `DATA` folder.
+     - Otherwise, there is an existing `review_polarity_clean.csv` file in the `DATA` folder ready for use.
+  4. **Run model scripts**
+     - Navigate to the `SCRIPTS` folder.
+     - Each script corresponds to a model (ex: Logistic Regression, SVM, Naive Bayes). Run each script in order of their postfix numbers. Note: The models are indepenent, so order does not matter, but we have numbered the files to mirror our process. 
+  5. **Download and view outputs** 
      - Confusion matrix images (ex: `svm_cm.png`, `mlp_cm.png`) need to be saved manually after running the scripts.
