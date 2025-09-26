@@ -17,8 +17,8 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load dataset from CSV
-df = pd.read_csv("/Users/athenavo/PycharmProjects/Project1/DATA/review_polarity_clean.csv")
+# Load dataset from CSV (from DATA folder)
+df = pd.read_csv(os.path.join("..", "DATA", "review_polarity_clean.csv"))
 
 # Split into train/test sets
 X_train, X_test, y_train, y_test = train_test_split(
