@@ -6,8 +6,8 @@ The [Movie Polarity Dataset v2.0](https://www.cs.cornell.edu/people/pabo/movie-r
 
 You are free to:
 
-- **Share** — copy and redistribute the material in any medium or format.
-- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially.
+- **Share** — Copy and redistribute the material in any medium or format.
+- **Adapt** — Remix, transform, and build upon the material for any purpose, even commercially.
 
 Conditions:
 
