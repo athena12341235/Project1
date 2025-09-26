@@ -37,16 +37,21 @@ The hierarchy of folders and files contained in this project are as follows:
 ```text
 Project1
 ├── DATA
-│   ├── rt-polaritydata/rt-polaritydata
-│   │   ├── rt-polarity.neg
-│   │   └── rt-polarity.pos
-│   ├── preprocessing.py
-│   └── review_polarity_clean.csv
+│   ├── review_polarity
+│   │   └── txt_sentoken
+│   │       ├── neg
+│   │       │   ├── cv000_29416.txt
+│   │       │   └── ... (more negative review files)
+│   │       └── pos
+│   │           ├── cv000_29590.txt
+│   │           └── ... (more positive review files)
+│   ├── README.md
+│   ├── review_lengths_plots.png
+│   ├── review_polarity_clean.csv
+│   └── word_frequencies_plots.png
 ├── OUTPUT
-│   ├── bert_output.log
 │   ├── lightgbm_cm.png
 │   ├── mlp_cm.pgn
-│   ├── naive_bayes_output.log
 │   ├── sgd_cm.png
 │   └── svm_cm.png
 ├── SCRIPTS
@@ -55,10 +60,11 @@ Project1
 │   ├── logreg_model.py
 │   ├── mlp_model.py
 │   ├── naive_bayes_model.py
+│   ├── preprocessing.py
 │   ├── sgd_model.py
 │   └── svm_model.py
-├── README.md
-└── LICENSE.md
+├── LICENSE.md
+└── README.md
 ```
 
 ## 3. Reproducing Our Results
