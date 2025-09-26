@@ -30,8 +30,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import lightgbm as lgb
 
-# 1. Load dataset from CSV
-df = pd.read_csv("review_polarity_clean.csv")
+# 1. Load dataset from CSV (from DATA folder)
+df = pd.read_csv(os.path.join("..", "DATA", "review_polarity_clean.csv"))
 
 # Split features (text) and labels (0/1)
 X = df["clean_text"].astype(str)
