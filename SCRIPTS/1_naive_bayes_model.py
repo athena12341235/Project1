@@ -27,7 +27,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report
 
 # 1. Load dataset from CSV
-df = pd.read_csv("review_polarity_clean.csv")
+df = pd.read_csv(os.path.join("..", "DATA", "review_polarity_clean.csv"))
 
 # Extract features (text reviews) and labels (0/1 sentiment)
 X = df["clean_text"].astype(str)   # predictor variable
