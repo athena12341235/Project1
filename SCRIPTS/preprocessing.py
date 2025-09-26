@@ -1,3 +1,18 @@
+"""
+This script preprocesses raw movie text data for sentiment analysis.
+Converts to lowercase, removes punctuation and numbers, tokenizes, removes stopwords,
+lemmatizes words.
+
+Input:
+    - Text files loaded in the dataset directory. Each file contains raw text for a single review.
+        Positive reviews: ../DATA/review_polarity/txt_sentoken/neg/*.txt 
+        Negative reviews: ../DATA/review_polarity/txt_sentoken/pos/*.txt 
+Output: 
+    - `review_polarity_clean.csv` containing two columns:
+          - `clean_text`: preprocessed version of the review
+          - `label`: sentiment label (0 = negative, 1 = positive)
+"""
+
 import os
 import glob
 import re
@@ -51,6 +66,6 @@ def preprocess(text: str) -> str:
 # ----- Apply cleaning -----
 df["clean_text"] = df["text"].apply(preprocess)
 out_df = df[["clean_text", "label"]]
-out_path = "review_polarity_clean.csv"
+out_path = os.path.join("..", "DATA", "review_polarity_clean.csv")
 out_df.to_csv(out_path, index=False)
 print(out_df.head())
