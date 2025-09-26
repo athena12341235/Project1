@@ -32,8 +32,8 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# 1. Load data
-df = pd.read_csv("/Users/athenavo/PycharmProjects/Project1/DATA/review_polarity_clean.csv")
+# 1. Load data from CSV (from DATA folder)
+df = pd.read_csv(os.path.join("..", "DATA", "review_polarity_clean.csv"))
 
 # Extract features (text reviews) and labels (0/1 sentiment)
 X = df["clean_text"].astype(str)
