@@ -22,6 +22,7 @@ Steps in the script:
 6. Plot confusion matrix
 """
 
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer

@@ -8,6 +8,7 @@ Steps:
 4. Model performance is evaluated with accuracy, classification report, and a confusion matrix heatmap.
 """
 
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer

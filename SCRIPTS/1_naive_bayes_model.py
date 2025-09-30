@@ -20,6 +20,7 @@ Steps in the script:
 5. Evaluate with accuracy, precision, recall, F1
 """
 
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer

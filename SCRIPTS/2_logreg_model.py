@@ -30,6 +30,7 @@ Steps in the script:
 6. Plot confusion matrix
 """
 
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
